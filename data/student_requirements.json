@@ -1,0 +1,297 @@
+{
+  "students": {
+    "S1": {
+      "name": "Student 1",
+      "year": 3,
+      "required_credits": 15,
+      "required_courses": {
+        "core": [
+          "DB",
+          "TC",
+          "OS"
+        ],
+        "electives": 2,
+        "elective_pool": [
+          "GD",
+          "MAD",
+          "ML"
+        ]
+      },
+      "completed_courses": [
+        "CA",
+        "SE",
+        "DS",
+        "ALG"
+      ],
+      "time_preferences": {
+        "preferred": {
+          "description": "Morning person (8AM-12PM)",
+          "time_slots": [
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "blocked": {
+          "description": "Part-time job Wed/Fri 4-6PM",
+          "slots": [
+            {
+              "day": "Wednesday",
+              "time": 16
+            },
+            {
+              "day": "Wednesday",
+              "time": 17
+            },
+            {
+              "day": "Friday",
+              "time": 16
+            },
+            {
+              "day": "Friday",
+              "time": 17
+            }
+          ]
+        }
+      },
+      "friends": [
+        "S3"
+      ],
+      "max_courses_per_day": 3
+    },
+    "S2": {
+      "name": "Student 2",
+      "year": 4,
+      "required_credits": 15,
+      "required_courses": {
+        "core": [
+          "CN",
+          "TC"
+        ],
+        "electives": 3,
+        "elective_pool": [
+          "ML",
+          "GD",
+          "MAD"
+        ]
+      },
+      "completed_courses": [
+        "DS",
+        "ALG",
+        "OS",
+        "DB",
+        "SE",
+        "CA"
+      ],
+      "time_preferences": {
+        "preferred": {
+          "description": "Afternoon person (12PM-4PM)",
+          "time_slots": [
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "blocked": {
+          "description": "None",
+          "slots": []
+        }
+      },
+      "special_constraints": {
+        "minimize_gaps": true,
+        "description": "Commuter \u2013 1hr commute"
+      },
+      "friends": [
+        "S4"
+      ],
+      "max_courses_per_day": 3
+    },
+    "S3": {
+      "name": "Student 3",
+      "year": 3,
+      "required_credits": 15,
+      "required_courses": {
+        "core": [
+          "DB",
+          "OS",
+          "TC",
+          "CN",
+          "SE"
+        ],
+        "electives": 0,
+        "elective_pool": []
+      },
+      "completed_courses": [
+        "CA",
+        "SE",
+        "DS",
+        "ALG",
+        "OS"
+      ],
+      "time_preferences": {
+        "preferred": {
+          "description": "Flexible",
+          "time_slots": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ]
+        },
+        "blocked": {
+          "description": "None",
+          "slots": []
+        }
+      },
+      "friends": [
+        "S1",
+        "S5"
+      ],
+      "max_courses_per_day": 3
+    },
+    "S4": {
+      "name": "Student 4",
+      "year": 2,
+      "required_credits": 15,
+      "required_courses": {
+        "core": [
+          "CA",
+          "SE",
+          "ALG"
+        ],
+        "electives": 2,
+        "elective_pool": [
+          "GD",
+          "MAD"
+        ]
+      },
+      "completed_courses": [
+        "DS",
+        "SE"
+      ],
+      "time_preferences": {
+        "preferred": {
+          "description": "Morning person (8AM-12PM)",
+          "time_slots": [
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "blocked": {
+          "description": "Sports Mon/Wed/Fri 2-4PM",
+          "slots": [
+            {
+              "day": "Monday",
+              "time": 14
+            },
+            {
+              "day": "Monday",
+              "time": 15
+            },
+            {
+              "day": "Wednesday",
+              "time": 14
+            },
+            {
+              "day": "Wednesday",
+              "time": 15
+            },
+            {
+              "day": "Friday",
+              "time": 14
+            },
+            {
+              "day": "Friday",
+              "time": 15
+            }
+          ]
+        }
+      },
+      "friends": [
+        "S2"
+      ],
+      "max_courses_per_day": 3
+    },
+    "S5": {
+      "name": "Student 5",
+      "year": 3,
+      "required_credits": 15,
+      "required_courses": {
+        "core": [
+          "ALG",
+          "DB",
+          "OS",
+          "CN"
+        ],
+        "electives": 1,
+        "elective_pool": [
+          "GD",
+          "ML"
+        ]
+      },
+      "completed_courses": [
+        "CA",
+        "DS",
+        "OS",
+        "ALG"
+      ],
+      "time_preferences": {
+        "preferred": {
+          "description": "Late afternoon (2PM-6PM)",
+          "time_slots": [
+            14,
+            15,
+            16,
+            17
+          ]
+        },
+        "blocked": {
+          "description": "Penalty for 8AM",
+          "slots": []
+        }
+      },
+      "special_constraints": {
+        "avoid_early": true,
+        "penalty_time": 8
+      },
+      "friends": [
+        "S3"
+      ],
+      "max_courses_per_day": 3
+    }
+  },
+  "friend_pairs": [
+    [
+      "S1",
+      "S3"
+    ],
+    [
+      "S2",
+      "S4"
+    ],
+    [
+      "S3",
+      "S5"
+    ]
+  ],
+  "global_constraints": {
+    "lunch_time": {
+      "time_slot": 12,
+      "preferred_days_free": 3,
+      "description": "12PM free 3+ days"
+    },
+    "max_courses_per_day": 3,
+    "min_gap_minutes": 0,
+    "max_gap_hours": 4
+  }
+}

@@ -1,0 +1,37 @@
+ga:
+  population_size: 100
+  max_generations: 300
+  crossover_prob: 0.80
+  mutation_rates:
+    section_change: 0.12
+    course_swap: 0.10
+    time_slot_shift: 0.08
+    friend_alignment: 0.15
+  tournament_size: 5
+  tournament_fraction: 0.70
+  roulette_fraction: 0.30
+  elite_fraction: 0.10
+  stagnation_generations: 40
+  stagnation_threshold: 0.001
+  similarity_threshold: 0.85
+  similarity_tolerance: 0.02
+  diversity_check_interval: 10
+  diversity_threshold: 0.30
+  diversity_mutation_multiplier: 1.5
+  inject_fraction: 0.20
+
+fitness:
+  weight_time: 0.30
+  weight_gap: 0.25
+  weight_friend: 0.20
+  weight_workload: 0.15
+  weight_lunch: 0.10
+  penalty_time_conflict: 0.50
+  penalty_prereq_violation: 0.30
+  penalty_blocked_time: 0.40
+  penalty_capacity: 0.20
+
+paths:
+  course_catalog: data/course_catalog.json
+  students: data/students.json
+  output_dir: output
